@@ -1,1 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NY Metro Coalition for Higher Education</title>
+    <style>
+        /* Modern Flat Design Styles (2026 Aesthetic) */
+        :root {
+            --primary-red: #d71920; /* From logo */
+            --primary-green: #007a3d; /* From logo */
+            --text-dark: #212121;
+            --text-light: #ffffff;
+            --bg-cream: #fbf9f6;
+            --bg-white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; color: var(--primary-red); }
+        h2 { font-size: 2rem; color: var(--text-dark); border-bottom: 4px solid var(--primary-green); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 2rem;}
+        h3 { font-size: 1.25rem; }
+
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; max-width: 800px;}
+
+        /* Layout Containers */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            height: 50px; /* Adjust based on logo image aspect ratio */
+        }
+
+        .coaltion-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--bg-white);
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        #hero h1 {
+            color: var(--text-dark);
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #hero h1 span {
+            color: var(--primary-red);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #005a2d;
+        }
+
+        /* Mission Section */
+        #mission {
+            background-color: var(--bg-cream);
+        }
+
+        .mission-text {
+            column-count: 2;
+            column-gap: 3rem;
+        }
+
+        /* Past Actions (Portfolio/Blog) */
+        #actions {
+            background-color: var(--bg-white);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .poster-thumbnail {
+            width: 100%;
+            height: 400px; /* Adjust height based on poster aspect ratio */
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .item-details {
+            padding: 1.5rem;
+        }
+
+        .item-date {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Expanded Poster Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Get Involved Section */
+        #get-involved {
+            background-color: var(--bg-cream);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            #hero h1 { font-size: 2.5rem; }
+            .header-content { flex-direction: column; gap: 1rem; text-align: center; }
+            nav ul { flex-direction: column; gap: 1rem; }
+            .mission-text { column-count: 1; }
+            .modal-content { max-width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="path/to/hand_pencils_logo.png" alt="NY Metro Coalition Logo" class="logo-icon">
+                <span class="coaltion-name">NY Metro Coalition<br>for Higher Education</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#actions">Past Actions</a></li>
+                    <li><a href="#get-involved">Get Involved</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Defending the <span>Right to Learn</span>.<br>Advancing Higher Education.</h1>
+            <p>We are a unified network of faculty, staff, and advocates committed to academic freedom, economic equity, and democratic education in the New York Metropolitan area.</p>
+            <a href="#get-involved" class="btn">Join the Coalition</a>
+        </div>
+    </section>
+
+    <section id="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <div class="mission-text">
+                <p>The NY Metro Coalition for Higher Ed is a group of faculty and staff unions and advocacy groups committed to advancing the right to learn, teach, research, associate, assemble, and dissent. We champion and defend the rights to academic freedom and freedom of speech as the cornerstone of higher education, crucial to the role of education in a just, democratic society.</p>
+                <p>We stand against threats to ourselves and our educational institutions, which undermine or punish us for political speech, discriminate against us or harm us based on our identities or citizenship status, diminish our scientific, social, humanistic, and artistic research, or attack our rights.</p>
+                <p>We believe in the necessity for greater economic equity within and across our institutions, and uphold a vision of higher education in which the pursuit of learning does not incur crippling debt.</p>
+                <p>We are an advocacy network that shares resources and support through events and other platforms. We aim to enact changes within our institutions and at local and state levels that enshrine our rights, and pressure our institutional leaders to defend the autonomy of higher education.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="actions">
+        <div class="container">
+            <h2>Past Actions & Events</h2>
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item" onclick="openModal('path/to/image_0.png')">
+                    <img src="path/to/image_0.png" alt="Rally for the Right to Learn Poster" class="poster-thumbnail">
+                    <div class="item-details">
+                        <span class="item-date">April 17</span>
+                        <h3>Rally for the Right to Learn!</h3>
+                        <p>March from Washington Square Park to Foley Square.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="openModal('path/to/image_1.png')">
+                    <img src="path/to/image_1.png" alt="Hands Off Higher Ed Protest Poster" class="poster-thumbnail">
+                    <div class="item-details">
+                        <span class="item-date">November 7</span>
+                        <h3>Protest Marc Rowan: Hands Off Higher Ed</h3>
+                        <p>Rally outside Apollo Global Management against the "Compact".</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" onclick="openModal('path/to/image_3.png')">
+                    <img src="path/to/image_3.png" alt="Hands Off Higher Ed Town Hall Poster" class="poster-thumbnail">
+                    <div class="item-details">
+                        <span class="item-date">October 28</span>
+                        <h3>Hands Off Higher Ed! Town Hall</h3>
+                        <p>Cross-institutional organizing meeting at NYU Cantor Center.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="posterModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedPoster">
+    </div>
+
+    <section id="get-involved">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <p>Our power is in our numbers. Connect with us to share resources, receive support, and join upcoming actions. Together, we can build a future for higher education free from coercion and censorship.</p>
+            <a href="mailto:info@nymetrocoalition.org" class="btn">Email the Coalition</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 NY Metro Coalition for Higher Education. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal Logic for Poster Expansion
+        function openModal(imageSrc) {
+            var modal = document.getElementById("posterModal");
+            var modalImg = document.getElementById("expandedPoster");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("posterModal");
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            var modal = document.getElementById("posterModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
