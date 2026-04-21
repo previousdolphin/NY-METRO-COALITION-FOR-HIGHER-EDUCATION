@@ -14,21 +14,20 @@
                 extend: {
                     colors: {
                         brand: {
-                            red: '#cc191c',   // Logo background red
-                            green: '#2d6a4f', // Logo pencil green
-                            black: '#111111', // Deep urban black
-                            cream: '#f4f4f0', // Newsprint/zine background
+                            red: '#cc191c',
+                            green: '#2d6a4f',
+                            black: '#111111',
+                            cream: '#f4f4f0',
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Oswald', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'], // For the NY Post vibe
+                        serif: ['Playfair Display', 'serif'],
                     },
                     boxShadow: {
                         'brutal': '6px 6px 0px 0px rgba(17, 17, 17, 1)',
                         'brutal-hover': '2px 2px 0px 0px rgba(17, 17, 17, 1)',
-                        'brutal-light': '4px 4px 0px 0px rgba(204, 25, 28, 1)',
                     }
                 }
             }
@@ -37,7 +36,6 @@
     <style>
         body.modal-open { overflow: hidden; }
         
-        /* Custom urban textures/patterns could go here, keeping it clean with solid colors for now */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -63,14 +61,17 @@
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-brand-cream border-b-4 border-brand-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex justify-between h-20 items-center">
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="border-2 border-brand-black bg-white p-1 shadow-brutal transition-transform group-hover:translate-y-1 group-hover:shadow-brutal-hover">
-                        <img src="./NY Metro CHE Logo.png" 
-                             onerror="this.src='https://placehold.co/100x100/cc191c/ffffff?text=LOGO'" 
+                
+                <!-- Logo & Brand Name -->
+                <a href="#" class="flex items-center group relative h-full">
+                    <!-- The logo container with negative bottom margin to break out of the nav -->
+                    <div class="relative z-[60] -mb-16 mr-4 border-4 border-brand-black bg-brand-cream p-1 shadow-brutal transition-transform group-hover:translate-y-1 group-hover:shadow-brutal-hover">
+                        <img src="NY Metro CHE Logo trans.png" 
+                             onerror="this.src='NY Metro CHE Logo.jpg'" 
                              alt="NY Metro Coalition Logo" 
-                             class="h-10 w-auto object-contain">
+                             class="h-20 sm:h-28 w-auto object-contain">
                     </div>
                     <span class="font-display font-bold text-xl uppercase leading-none hidden sm:block tracking-wide">
                         NY Metro Coalition<br>
@@ -78,6 +79,7 @@
                     </span>
                 </a>
                 
+                <!-- Desktop Links -->
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="#mission" class="font-display font-bold text-lg uppercase tracking-wide hover:text-brand-red transition-colors">Mission</a>
                     <a href="#actions" class="font-display font-bold text-lg uppercase tracking-wide hover:text-brand-red transition-colors">Past Actions</a>
@@ -104,17 +106,16 @@
 
     <!-- Hero Section -->
     <header class="border-b-4 border-brand-black bg-white overflow-hidden relative">
-        <!-- Abstract urban grid background -->
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#111 2px, transparent 2px); background-size: 30px 30px;"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10 flex flex-col md:flex-row items-center gap-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 lg:pt-32 lg:pb-32 relative z-10 flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 text-left">
-                <div class="inline-block bg-brand-green text-white font-display font-bold uppercase px-3 py-1 mb-6 border-2 border-brand-black transform -rotate-2">
+                <div class="inline-block bg-brand-green text-white font-display font-bold uppercase px-3 py-1 mb-6 border-2 border-brand-black transform -rotate-2 mt-4 sm:mt-0">
                     Grassroots Power
                 </div>
                 <h1 class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter leading-[0.9] mb-6">
                     DEFEND THE<br>
-                    <span class="text-white text-shadow-custom" style="text-shadow: 4px 4px 0 #cc191c, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111, 1px 1px 0 #111;">RIGHT TO LEARN</span>
+                    <span class="text-white" style="text-shadow: 4px 4px 0 #cc191c, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111, 1px 1px 0 #111;">RIGHT TO LEARN</span>
                 </h1>
                 <p class="mt-4 text-xl md:text-2xl font-semibold max-w-2xl text-brand-black border-l-4 border-brand-red pl-4">
                     A united network of faculty, staff unions, and advocacy groups fighting for academic freedom and economic equity in the NYC Metro.
@@ -176,8 +177,8 @@
                 
                 <!-- Action 1 -->
                 <div class="bg-brand-cream border-4 border-brand-black shadow-brutal flex flex-col h-full transition-transform hover:-translate-y-2">
-                    <div class="overflow-hidden border-b-4 border-brand-black relative aspect-[3/4] cursor-pointer bg-white" onclick="openModal('./4_17 Poster.jpg')">
-                        <img src="./4_17 Poster.png" 
+                    <div class="overflow-hidden border-b-4 border-brand-black relative aspect-[3/4] cursor-pointer bg-white" onclick="openModal('4_17 Poster.jpg')">
+                        <img src="4_17 Poster.jpg" 
                              onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=April+17+Poster'" 
                              alt="Rally for the Right to Learn" 
                              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300">
@@ -189,7 +190,6 @@
                         <h3 class="text-2xl font-display font-bold uppercase mb-2 leading-tight">Rally for the Right to Learn!</h3>
                         <p class="text-brand-black font-medium mb-4 flex-grow">March from Washington Square Park and rally at Foley Square to defend academic freedom.</p>
                         
-                        <!-- Press Links -->
                         <div class="mt-auto pt-4 border-t-2 border-brand-black border-dashed flex items-center justify-between">
                             <span class="text-xs font-bold uppercase tracking-wider text-gray-600">In the Press:</span>
                             <div class="flex gap-2">
@@ -206,8 +206,8 @@
 
                 <!-- Action 2 -->
                 <div class="bg-brand-cream border-4 border-brand-black shadow-brutal flex flex-col h-full transition-transform hover:-translate-y-2">
-                    <div class="overflow-hidden border-b-4 border-brand-black relative aspect-[3/4] cursor-pointer bg-white" onclick="openModal('./Apollo Management Poster.jpg')">
-                        <img src="./Apollo Management Poster.png" 
+                    <div class="overflow-hidden border-b-4 border-brand-black relative aspect-[3/4] cursor-pointer bg-white" onclick="openModal('Apollo Management Poster.jpg')">
+                        <img src="Apollo Management Poster.jpg" 
                              onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=Apollo+Poster'" 
                              alt="Hands Off Higher Ed - Apollo Management" 
                              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300">
@@ -219,7 +219,6 @@
                         <h3 class="text-2xl font-display font-bold uppercase mb-2 leading-tight">Hands Off Higher Ed</h3>
                         <p class="text-brand-black font-medium mb-4 flex-grow">Protest outside Apollo Global Management. Reject the Compact and oligarchic influence.</p>
                         
-                        <!-- Press Links -->
                         <div class="mt-auto pt-4 border-t-2 border-brand-black border-dashed flex items-center justify-between">
                             <span class="text-xs font-bold uppercase tracking-wider text-gray-600">In the Press:</span>
                             <div class="flex gap-2">
@@ -233,8 +232,8 @@
 
                 <!-- Action 3 -->
                 <div class="bg-brand-cream border-4 border-brand-black shadow-brutal flex flex-col h-full transition-transform hover:-translate-y-2">
-                    <div class="overflow-hidden border-b-4 border-brand-black relative aspect-[3/4] cursor-pointer bg-white" onclick="openModal('./Townhall Poster.jpg')">
-                        <img src="./Townhall Poster.JPG" 
+                    <div class="overflow-hidden border-b-4 border-brand-black relative aspect-[3/4] cursor-pointer bg-white" onclick="openModal('Townhall Poster.jpg')">
+                        <img src="Townhall Poster.jpg" 
                              onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=Townhall+Poster'" 
                              alt="Town Hall Organizing Meeting" 
                              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300">
@@ -246,7 +245,6 @@
                         <h3 class="text-2xl font-display font-bold uppercase mb-2 leading-tight">Organizing Town Hall</h3>
                         <p class="text-brand-black font-medium mb-4 flex-grow">Cross-institutional organizing meeting at the NYU Cantor Center to build power.</p>
                         
-                        <!-- Press Links -->
                         <div class="mt-auto pt-4 border-t-2 border-brand-black border-dashed flex items-center justify-between">
                             <span class="text-xs font-bold uppercase tracking-wider text-gray-600">In the Press:</span>
                             <div class="flex gap-2">
@@ -264,18 +262,19 @@
 
     <!-- Modal Lightbox -->
     <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-brand-black/90 backdrop-blur-sm flex justify-center items-center" onclick="closeModal(event)">
-        <button class="absolute top-4 right-4 bg-white text-brand-black border-4 border-brand-black p-2 font-display font-bold text-xl uppercase hover:bg-brand-red hover:text-white transition-colors focus:outline-none" onclick="closeModal(event, true)">
+        <button class="absolute top-4 right-4 bg-white text-brand-black border-4 border-brand-black p-2 font-display font-bold text-xl uppercase hover:bg-brand-red hover:text-white transition-colors focus:outline-none z-50" onclick="closeModal(event, true)">
             CLOSE [X]
         </button>
         <div class="w-full max-w-5xl max-h-[90vh] p-4 flex justify-center items-center" onclick="event.stopPropagation()">
-            <img id="modalImage" src="" alt="Expanded View" class="max-w-full max-h-[85vh] object-contain border-8 border-white shadow-brutal">
+            <!-- Added an onerror fallback here so if a path is wrong, it won't just be a broken image icon -->
+            <img id="modalImage" src="" alt="Expanded View" class="max-w-full max-h-[85vh] object-contain border-8 border-white shadow-brutal bg-white" onerror="this.onerror=null; this.src='https://placehold.co/600x800/eeeeee/999999?text=Image+Not+Found';">
         </div>
     </div>
 
     <!-- Footer / Get Involved -->
     <footer id="get-involved" class="bg-brand-black text-white py-20 border-t-8 border-brand-red">
         <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-6xl font-display font-bold uppercase tracking-tighter mb-6 text-white text-shadow-custom" style="text-shadow: 4px 4px 0 #2d6a4f;">
+            <h2 class="text-6xl font-display font-bold uppercase tracking-tighter mb-6 text-white" style="text-shadow: 4px 4px 0 #2d6a4f;">
                 Join The Fight
             </h2>
             <p class="text-xl font-medium mb-10 max-w-2xl mx-auto">
@@ -292,7 +291,6 @@
 
     <!-- Interactive Scripts -->
     <script>
-        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -307,7 +305,6 @@
             });
         });
 
-        // Modal Logic
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
 
