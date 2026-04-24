@@ -237,11 +237,12 @@
                     
                     <!-- Action 1 -->
                     <div class="bg-white border-4 border-brand-black shadow-brutal flex flex-col h-full">
-                        <div class="border-b-4 border-brand-black relative aspect-[3/4] bg-white">
+                        <div class="border-b-4 border-brand-black relative aspect-[3/4] bg-white overflow-hidden group">
+                            <!-- Added cursor-pointer, action-poster class, and hover state -->
                             <img src="4_17 Poster.png" 
                                  onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=April+17+Poster'" 
                                  alt="Rally for the Right to Learn" 
-                                 class="w-full h-full object-cover">
+                                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300 action-poster">
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-display font-bold uppercase mb-2 leading-tight">Rally for the Right to Learn!</h3>
@@ -260,11 +261,11 @@
 
                     <!-- Action 2 -->
                     <div class="bg-white border-4 border-brand-black shadow-brutal flex flex-col h-full">
-                        <div class="border-b-4 border-brand-black relative aspect-[3/4] bg-white">
+                        <div class="border-b-4 border-brand-black relative aspect-[3/4] bg-white overflow-hidden group">
                             <img src="Apollo Management Poster.png" 
                                  onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=Apollo+Poster'" 
                                  alt="Hands Off Higher Ed - Apollo Management" 
-                                 class="w-full h-full object-cover">
+                                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300 action-poster">
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-display font-bold uppercase mb-2 leading-tight">Hands Off Higher Ed</h3>
@@ -292,11 +293,11 @@
 
                     <!-- Action 3 -->
                     <div class="bg-white border-4 border-brand-black shadow-brutal flex flex-col h-full">
-                        <div class="border-b-4 border-brand-black relative aspect-[3/4] bg-white">
+                        <div class="border-b-4 border-brand-black relative aspect-[3/4] bg-white overflow-hidden group">
                             <img src="Townhall Poster.JPG" 
                                  onerror="this.src='https://placehold.co/600x800/eeeeee/999999?text=Townhall+Poster'" 
                                  alt="Town Hall Organizing Meeting" 
-                                 class="w-full h-full object-cover">
+                                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300 action-poster">
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-display font-bold uppercase mb-2 leading-tight">Organizing Town Hall</h3>
@@ -319,6 +320,8 @@
 
             <!-- Participant Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-8">
+                <!-- Added NYC Student Union to Who We Are -->
+                <img src="nycstudentunion.jpg" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYC<br>Student Union</div>'" alt="NYC Student Union Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all cursor-pointer">
                 <img src="01psa-njit.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>PSA<br>(NJIT AAUP)</div>'" alt="PSA NJIT Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
                 <img src="02aaup-st-johns.jpeg" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>St. John\'s</div>'" alt="AAUP St. Johns Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
                 <img src="03PSC-CUNY.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>PSC<br>CUNY</div>'" alt="PSC CUNY Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
@@ -391,8 +394,19 @@
         </div>
     </footer>
 
+    <!-- Image Modal for Posters -->
+    <div id="image-modal" class="fixed inset-0 z-[100] bg-black/90 hidden opacity-0 transition-opacity duration-300 flex-col items-center justify-center p-4 sm:p-8 backdrop-blur-sm">
+        <button id="close-modal" class="absolute top-4 right-4 sm:top-8 sm:right-8 text-white hover:text-brand-red p-2 focus:outline-none transition-colors group z-10">
+            <svg class="w-10 h-10 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="relative max-w-5xl max-h-full w-full h-full flex items-center justify-center cursor-auto">
+            <img id="modal-image" src="" alt="Enlarged view" class="max-w-full max-h-full object-contain border-4 border-brand-black shadow-[8px_8px_0_0_#cc191c]">
+        </div>
+    </div>
+
     <!-- Interactive Scripts -->
     <script>
+        // Mobile Menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -400,11 +414,60 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        const mobileLinks = mobileMenu.querySelectorAll('a');
+        const mobileLinks = mobileMenu.querySelectorAll('#mobile-menu a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Image Modal Logic for Past Action Posters
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeBtn = document.getElementById('close-modal');
+        const posters = document.querySelectorAll('.action-poster');
+
+        function openModal(src) {
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+            // Slight delay to allow display to apply before fading in
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Stop body scrolling
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImg.src = '';
+            }, 300); // Match Tailwind transition duration
+            document.body.style.overflow = '';
+        }
+
+        posters.forEach(poster => {
+            poster.addEventListener('click', function() {
+                openModal(this.src);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        
+        // Close if clicking outside the image
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.closest('div.relative') === null || e.target.tagName !== 'IMG') {
+                closeModal();
+            }
+        });
+
+        // Esc key to close
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
         });
     </script>
 </body>
