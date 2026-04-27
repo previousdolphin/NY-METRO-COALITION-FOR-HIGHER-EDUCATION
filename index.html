@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth"><!-- test -->
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,6 +49,7 @@
         /* Custom fallback style for missing logos in Who We Are section */
         .logo-fallback {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -326,28 +327,45 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight inline-block border-b-8 border-brand-red pb-2">Who We Are</h2>
-                <p class="mt-6 text-xl font-medium max-w-3xl mx-auto">The NY Metro Coalition for Higher Ed comprises faculty, staff, and graduate worker unions, as well as advocacy groups from across the city and state.</p>
+                <p class="mt-6 text-xl font-medium max-w-3xl mx-auto">The NY Metro Coalition for Higher Ed comprises faculty, staff, and student worker unions and advocacy groups from across the city and state.</p>
             </div>
 
             <!-- Participant Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 lg:gap-8">
+                <!-- Original 17 -->
                 <img src="nycstudentunion.jpg" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYC<br>Student Union</div>'" alt="NYC Student Union Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all cursor-pointer">
-                <img src="01psa-njit.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>PSA<br>(NJIT AAUP)</div>'" alt="PSA NJIT Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="02aaup-st-johns.jpeg" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>St. John\'s</div>'" alt="AAUP St. Johns Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="03PSC-CUNY.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>PSC<br>CUNY</div>'" alt="PSC CUNY Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="04aaup_tns.webp" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>The New School</div>'" alt="AAUP The New School Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="05SVA-fac.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>SVA<br>Faculty United</div>'" alt="SVA Faculty United Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="06swc-2710.jpg" onerror="this.outerHTML='<div class=\'logo-fallback\'>SWC<br>UAW Local 2710</div>'" alt="SWC UAW Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="07nyu-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>NYU</div>'" alt="AAUP NYU Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="08columbia-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Columbia<br>AAUP</div>'" alt="Columbia AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="09tns-academic.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Academic<br>Student Workers</div>'" alt="Academic Student Workers Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="010uaw-7902.jpg" onerror="this.outerHTML='<div class=\'logo-fallback\'>UAW<br>7902</div>'" alt="UAW 7902 Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="GSOC-UAW.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>GSOC<br>UAW</div>'" alt="GSOC UAW Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="012act-uaw 7902.webp" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYU Adjuncts<br>ACT-UAW 7902</div>'" alt="NYU Adjuncts Union Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="013Contract Faculty CFU UAW.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Contract Faculty<br>CFU UAW</div>'" alt="Contract Faculty United Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="RUAAUP.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Rutgers<br>AAUP-AFT</div>'" alt="Rutgers AAUP-AFT Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="hofstra-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Hofstra<br>AAUP</div>'" alt="Hofstra AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal">
-                <img src="nyit-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYIT<br>AAUP</div>'" alt="NYIT AAUP" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal"> 
+                <img src="01psa-njit.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>PSA<br>(NJIT AAUP)</div>'" alt="PSA NJIT Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="02aaup-st-johns.jpeg" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>St. John\'s</div>'" alt="AAUP St. Johns Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="03PSC-CUNY.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>PSC<br>CUNY</div>'" alt="PSC CUNY Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="04aaup_tns.webp" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>The New School</div>'" alt="AAUP The New School Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="05SVA-fac.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>SVA<br>Faculty United</div>'" alt="SVA Faculty United Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="06swc-2710.jpg" onerror="this.outerHTML='<div class=\'logo-fallback\'>SWC<br>UAW Local 2710</div>'" alt="SWC UAW Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="07nyu-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>AAUP<br>NYU</div>'" alt="AAUP NYU Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="08columbia-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Columbia<br>AAUP</div>'" alt="Columbia AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="09tns-academic.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Academic<br>Student Workers</div>'" alt="Academic Student Workers Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="010uaw-7902.jpg" onerror="this.outerHTML='<div class=\'logo-fallback\'>UAW<br>7902</div>'" alt="UAW 7902 Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="GSOC-UAW.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>GSOC<br>UAW</div>'" alt="GSOC UAW Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="012act-uaw 7902.webp" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYU Adjuncts<br>ACT-UAW 7902</div>'" alt="NYU Adjuncts Union Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="013Contract Faculty CFU UAW.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Contract Faculty<br>CFU UAW</div>'" alt="Contract Faculty United Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="RUAAUP.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Rutgers<br>AAUP-AFT</div>'" alt="Rutgers AAUP-AFT Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="hofstra-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>Hofstra<br>AAUP</div>'" alt="Hofstra AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="nyit-aaup.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYIT<br>AAUP</div>'" alt="NYIT AAUP" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all"> 
+
+                <!-- 7 New Requested Additions -->
+                <!-- Barnard AAUP -->
+                <img src="barnard-aaup-missing.png" onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background-color:#005596;color:white;border-color:#111;\'>Barnard<br>AAUP</div>'" alt="Barnard AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <!-- CFCU UAW -->
+                <img src="https://cfcu-uaw.org/wp-content/uploads/2024/04/CFCU-Logo-Wheel.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>CFCU<br>UAW</div>'" alt="Columbia Contingent Workers Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <!-- Fordham AAUP -->
+                <img src="fordham-aaup-missing.png" onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'color:#860038;\'>Fordham<br>AAUP</div>'" alt="Fordham AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <!-- NYU Researchers United -->
+                <img src="nyu-researchers-missing.png" onerror="this.outerHTML='<div class=\'logo-fallback\' style=\'background-color:#57068c;color:white;border-color:#111;\'><span style=\'font-size:2rem;margin-bottom:0.25rem;\'>🔥</span>NYU Researchers<br>United</div>'" alt="NYU Researchers United Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <!-- Rutgers Adjunct Faculty Union -->
+                <img src="https://rutgers-ptlfc.org/wp-content/uploads/2021/08/3000-x-626-rutgers-ptlfc-bulletin-image-white.png?w=1440&h=300" onerror="this.outerHTML='<div class=\'logo-fallback\'>Rutgers<br>Adjunct Faculty</div>'" alt="Rutgers Adjunct Faculty Union Logo" class="w-full h-auto aspect-square object-contain p-4 bg-brand-black border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                
+                <!-- Additional Partner Placeholders to round out the 7 new groups based on old signatories -->
+                <img src="nypan-missing.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>New York<br>Progressive<br>Action Network</div>'" alt="NYPAN Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
+                <img src="regional-aaup-missing.png" onerror="this.outerHTML='<div class=\'logo-fallback\'>NYC-Westchester<br>AAUP<br>Regional Council</div>'" alt="NYC-Westchester AAUP Logo" class="w-full h-auto aspect-square object-contain p-4 bg-white border-4 border-brand-black shadow-brutal hover:-translate-y-1 hover:shadow-[8px_8px_0_0_#111] transition-all">
             </div>
         </div>
     </section>
@@ -365,34 +383,6 @@
                 <p>
                 The NY Metro Coalition for Higher Ed is a group of faculty and staff unions and advocacy groups committed to advancing the right to learn, teach, research, associate, assemble, and dissent. We champion and defend the rights to academic freedom and freedom of speech as the cornerstone of higher education, crucial to the role of education in a just, democratic society. We stand against threats to ourselves and our educational institutions, which undermine or punish us for political speech, discriminate against us or harm us based on our identities or citizenship status, diminish our scientific, social, humanistic, and artistic research, or attack our rights. We believe in the necessity for greater economic equity within and across our institutions, and uphold a vision of higher education in which the pursuit of learning does not incur crippling debt. We are an advocacy network that shares resources and support through events and other platforms. We aim to enact changes within our institutions and at local and state levels that enshrine our rights, and pressure our institutional leaders to defend the autonomy of higher education.
                 </p>
-
-                <!-- Original Signatories Added Here -->
-                <div class="mt-12 pt-10 border-t-4 border-brand-black">
-                    <h3 class="text-2xl md:text-3xl font-display font-bold uppercase tracking-tight mb-8 inline-block bg-[#f9c041] px-4 py-1 border-4 border-brand-black shadow-brutal">Original Signatories</h3>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 text-sm md:text-base font-bold text-brand-black">
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Coalition for Higher Ed</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP National</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP-NYU</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP-The New School</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> NYC-Westchester Regional Council of AAUP</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP Barnard College</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP Columbia University</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP St John’s University</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> New Jersey Institute of Technology PSA/AAUP</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Rutgers AAUP-AFT</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Fordham University AAUP</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> AAUP NYIT-Manhattan Chapter</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> PSC/CUNY</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Contract Faculty United NYU (CFU-UAW)</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Rutgers Adjunct Faculty Union</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Contingent Faculty of Columbia University (UAW)</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> GSOC-UAW (NYU’s grad student union)</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> Student Workers of Columbia (SWC-UAW Local 2710)</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> UAW 7902</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> NYU Researchers United</li>
-                        <li class="flex items-start"><span class="text-brand-red mr-2 mt-1 text-xs">■</span> New York Progressive Action Network</li>
-                    </ul>
-                </div>
 
                 <div class="mt-12 mb-12 bg-brand-red text-white p-8 md:p-12 border-4 border-brand-black shadow-brutal">
                     <p class="font-display text-2xl md:text-3xl uppercase leading-tight tracking-wide text-center m-0 shadow-none text-white">
